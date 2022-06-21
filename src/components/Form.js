@@ -3,8 +3,8 @@ import { v4 as uuidv4 } from "uuid";
 
 const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
   const updateTodo = (title, id, completed) => {
-    const newTodo = todos.map((todo) =>
-      todos.id === id ? { title, id, completed } : todo
+    const newTodo = todos.map((todo) => 
+      todo.id === id ? { title, id, completed } : todo
     );
     setTodos(newTodo);
     setEditTodo("");
@@ -41,7 +41,7 @@ const Form = ({ input, setInput, todos, setTodos, editTodo, setEditTodo }) => {
         onChange={onInputChange}
       />
       <button className="button-add" type="submit">
-        {editTodo ? "Update" : "Add"}
+        {editTodo ? "OK" : "Add"}
       </button>
     </form>
   );

@@ -25,15 +25,15 @@ const TodosList = ({ todos, setTodos, setEditTodo }) => {
       {todos.map((todo) => (
         <li className="list-item" key={todo.id}>
           <input
-            type="text"
+            type="text" 
             value={todo.title}
-            className="list"
+            className={`list ${todo.completed ? "complete" : ""}`}
             onChange={(event) => event.preventDefault()}
           />
           <div>
             <button
               className="button-complete task-button"
-              onClick={() => handleComplete(todo)}
+              onClick={() => handleComplete(todo)} 
             >
               <i className="fa fa-check-circle"></i>
             </button>
